@@ -1,0 +1,28 @@
+#+TITLE: Tron usage
+#+PROPERTY: header-args :session *shell tron curl* :results silent raw
+
+** Contents                                                           :TOC_3:
+  - [[#environment-description][Environment description]]
+  - [[#requirements][Requirements]]
+  - [[#credentials][Credentials]]
+  - [[#references][References]]
+
+** Environment description
+
+- Deployed java-tron v4.0.1
+
+** Requirements
+
+- curl 7.61.1
+
+** Credentials
+
+Full node URL.
+
+#+BEGIN_SRC sh
+URL="http://127.0.0.1:8090"
+#+END_SRC
+
+** References
+
+1. https://developers.tron.network/reference
