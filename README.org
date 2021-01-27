@@ -6,6 +6,7 @@
   - [[#requirements][Requirements]]
   - [[#credentials][Credentials]]
   - [[#address-utilities][Address Utilities]]
+    - [[#generate-address][Generate address]]
     - [[#create-address][Create address]]
     - [[#validate-address][Validate address]]
   - [[#query-the-network][Query the network]]
@@ -31,6 +32,12 @@ URL="http://127.0.0.1:8090"
 #+END_SRC
 
 ** Address Utilities
+*** Generate address
+
+#+BEGIN_SRC sh
+curl $URL/wallet/generateaddress | python -m json.tool
+#+END_SRC
+
 *** Create address
 
 Prepare a password.
