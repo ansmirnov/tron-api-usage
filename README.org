@@ -78,7 +78,7 @@ curl $URL/wallet/listnodes | python -m json.tool
 *** Get node info
 
 #+BEGIN_SRC sh
-curl $URL/wallet/getnetworkinfo
+curl $URL/wallet/getnetworkinfo | python -m json.tool
 #+END_SRC
 
 *** Get chain parameters
