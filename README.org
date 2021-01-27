@@ -5,6 +5,9 @@
   - [[#environment-description][Environment description]]
   - [[#requirements][Requirements]]
   - [[#credentials][Credentials]]
+  - [[#address-utilities][Address Utilities]]
+    - [[#create-address][Create address]]
+    - [[#validate-address][Validate address]]
   - [[#query-the-network][Query the network]]
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
@@ -25,6 +28,44 @@ Full node URL.
 
 #+BEGIN_SRC sh
 URL="http://127.0.0.1:8090"
+#+END_SRC
+
+** Address Utilities
+*** Create address
+
+Prepare a password.
+
+#+BEGIN_SRC sh
+PASSWORD="testpassword123"
+#+END_SRC
+
+#+BEGIN_SRC sh
+HEX_PASSWORD=`python -c "print('$PASSWORD'.encode('utf-8').hex())"`
+#+END_SRC
+
+Call an API method.
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/createaddress \
+  --header 'Content-Type: application/json' \
+  --data "{\"value\":\"$HEX_PASSWORD\"}"
+#+END_SRC
+
+Use the base58checkAddress field as ADDRESS_B58 and value as ADDRESS_HEX.
+
+#+BEGIN_SRC sh
+ADDRESS_B58="..."
+ADDRESS_HEX="..."
+#+END_SRC
+
+*** Validate address
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/validateaddress \
+  --header 'Content-Type: application/json' \
+  --data "{\"address\":\"$ADDRESS_HEX\"}"
 #+END_SRC
 
 ** Query the network
