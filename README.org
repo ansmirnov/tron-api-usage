@@ -13,6 +13,8 @@
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
     - [[#get-chain-parameters][Get chain parameters]]
+  - [[#smart-contracts][Smart Contracts]]
+    - [[#get-contract][Get contract]]
   - [[#references][References]]
 
 ** Environment description
@@ -96,6 +98,25 @@ curl $URL/wallet/getnetworkinfo | python -m json.tool
 
 #+BEGIN_SRC sh
 curl $URL/wallet/getchainparameters | python -m json.tool
+#+END_SRC
+
+** Smart Contracts
+
+*** Get contract
+
+#+BEGIN_SRC sh
+CONTRACT_ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+VISIBLE="true"
+#+END_SRC
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/getcontract \
+  --header 'Content-Type: application/json' \
+  --data "{\"value\":\"$CONTRACT_ADDRESS\",\"visible\":$VISIBLE}"
 #+END_SRC
 
 ** References
