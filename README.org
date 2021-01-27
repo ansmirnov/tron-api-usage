@@ -5,6 +5,10 @@
   - [[#environment-description][Environment description]]
   - [[#requirements][Requirements]]
   - [[#credentials][Credentials]]
+  - [[#query-the-network][Query the network]]
+    - [[#list-nodes][List nodes]]
+    - [[#get-node-info][Get node info]]
+    - [[#get-chain-parameters][Get chain parameters]]
   - [[#references][References]]
 
 ** Environment description
@@ -21,6 +25,25 @@ Full node URL.
 
 #+BEGIN_SRC sh
 URL="http://127.0.0.1:8090"
+#+END_SRC
+
+** Query the network
+*** List nodes
+
+#+BEGIN_SRC sh
+curl $URL/wallet/listnodes | python -m json.tool
+#+END_SRC
+
+*** Get node info
+
+#+BEGIN_SRC sh
+curl $URL/wallet/getnetworkinfo
+#+END_SRC
+
+*** Get chain parameters
+
+#+BEGIN_SRC sh
+curl $URL/wallet/getchainparameters | python -m json.tool
 #+END_SRC
 
 ** References
