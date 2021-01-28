@@ -75,6 +75,20 @@ curl --request POST \
   --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
 #+END_SRC
 
+** Account Resources
+*** Get account resource
+
+#+BEGIN_SRC sh
+ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/getaccount \
+  --header 'Content-Type: application/json' \
+  --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
+#+END_SRC
+
 ** Query the network
 *** List nodes
 
