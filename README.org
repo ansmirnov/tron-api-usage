@@ -15,6 +15,7 @@
     - [[#get-chain-parameters][Get chain parameters]]
   - [[#smart-contracts][Smart Contracts]]
     - [[#get-contract][Get contract]]
+    - [[#trigger-smart-contract][Trigger smart contract]]
   - [[#references][References]]
 
 ** Environment description
@@ -116,6 +117,49 @@ curl --request POST \
   --url $URL/wallet/getcontract \
   --header 'Content-Type: application/json' \
   --data "{\"value\":\"$CONTRACT_ADDRESS\",\"visible\":$VISIBLE}"
+#+END_SRC
+
+*** Trigger smart contract
+
+#+BEGIN_SRC sh
+OWNER_ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+CONTRACT_ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+FUNCTION_SELECTOR="balanceOf(address)"
+#+END_SRC
+
+#+BEGIN_SRC sh
+CLIENT_ADDRESS_HEX=""
+#+END_SRC
+
+See https://gist.github.com/andelf/7c2b6b176872ff0e83086828e6f16d2b#file-trc20-py-L27.
+
+#+BEGIN_SRC sh
+PARAMETER=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+FEE_LIMIT="1000000"
+#+END_SRC
+
+#+BEGIN_SRC sh
+CALL_VALUE=0
+#+END_SRC
+
+#+BEGIN_SRC sh
+DATA="{\"owner_address\":\"$OWNER_ADDRESS\",\"contract_address\":\"$CONTRACT_ADDRESS\",\"function_selector\":\"$FUNCTION_SELECTOR\",\"parameter\":\"$PARAMETER\",\"fee_limit\":$FEE_LIMIT,\"call_value\":$CALL_VALUE}"
+#+END_SRC
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/triggersmartcontract \
+  --header 'Content-Type: application/json' \
+  --data $DATA | python -m json.tool
 #+END_SRC
 
 ** References
