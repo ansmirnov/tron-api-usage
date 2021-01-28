@@ -9,6 +9,8 @@
     - [[#generate-address][Generate address]]
     - [[#create-address][Create address]]
     - [[#validate-address][Validate address]]
+  - [[#account-resources][Account Resources]]
+    - [[#get-account-resource][Get account resource]]
   - [[#query-the-network][Query the network]]
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
