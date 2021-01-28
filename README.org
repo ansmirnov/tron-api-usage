@@ -86,7 +86,7 @@ ADDRESS=""
 
 #+BEGIN_SRC sh
 curl --request POST \
-  --url $URL/wallet/getaccount \
+  --url $URL/wallet/getaccountresource \
   --header 'Content-Type: application/json' \
   --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
 #+END_SRC
