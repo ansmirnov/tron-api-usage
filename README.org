@@ -126,10 +126,6 @@ CONTRACT_ADDRESS=""
 FUNCTION_SELECTOR="balanceOf(address)"
 #+END_SRC
 
-#+BEGIN_SRC sh
-CLIENT_ADDRESS_HEX=""
-#+END_SRC
-
 See https://gist.github.com/andelf/7c2b6b176872ff0e83086828e6f16d2b#file-trc20-py-L27.
 
 #+BEGIN_SRC sh
