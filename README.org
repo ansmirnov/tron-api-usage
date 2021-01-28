@@ -12,6 +12,7 @@
   - [[#account-resources][Account Resources]]
     - [[#get-account-resource][Get account resource]]
     - [[#get-account-net][Get account net]]
+    - [[#freeze-balance][Freeze balance]]
   - [[#query-the-network][Query the network]]
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
@@ -77,6 +78,48 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
 #+END_SRC
+
+** Transactions
+*** Get transaction sign
+
+#+BEGIN_SRC sh
+RAW_DATA=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+RAW_DATA_HEX=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+VISIBLE=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+TXID=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+TRANSACTION="{
+        \"visible\": $VISIBLE,
+        \"txID\": \"$TXID\",
+        \"raw_data\": \"`echo $RAW_DATA | sed 's/"/\\\\"/g'`\",
+        \"raw_data_hex\": \"$RAW_DATA_HEX\"
+    }"
+#+END_SRC
+
+#+BEGIN_SRC sh
+PRIVATE_KEY=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/gettransactionsign \
+  --header 'Content-Type: application/json' \
+  --data "{\"transaction\":$TRANSACTION,\"privateKey\":\"$PRIVATE_KEY\"}" | python -m json.tool
+#+END_SRC
+
+** Accounts
+*** Create Account
 
 ** Account Resources
 *** Get account resource
