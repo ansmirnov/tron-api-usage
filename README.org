@@ -11,6 +11,7 @@
     - [[#validate-address][Validate address]]
   - [[#account-resources][Account Resources]]
     - [[#get-account-resource][Get account resource]]
+    - [[#get-account-net][Get account net]]
   - [[#query-the-network][Query the network]]
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
@@ -87,6 +88,19 @@ ADDRESS=""
 #+BEGIN_SRC sh
 curl --request POST \
   --url $URL/wallet/getaccountresource \
+  --header 'Content-Type: application/json' \
+  --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
+#+END_SRC
+
+*** Get account net
+
+#+BEGIN_SRC sh
+ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/getaccountnet \
   --header 'Content-Type: application/json' \
   --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
 #+END_SRC
