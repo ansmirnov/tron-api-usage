@@ -9,6 +9,8 @@
     - [[#generate-address][Generate address]]
     - [[#create-address][Create address]]
     - [[#validate-address][Validate address]]
+  - [[#transactions][Transactions]]
+    - [[#get-transaction-sign][Get transaction sign]]
   - [[#account-resources][Account Resources]]
     - [[#get-account-resource][Get account resource]]
     - [[#get-account-net][Get account net]]
