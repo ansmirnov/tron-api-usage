@@ -129,7 +129,6 @@ curl --request POST \
 #+END_SRC
 
 *** Trigger smart contract
-**** Calling a reading function
 
 #+BEGIN_SRC sh
 OWNER_ADDRESS=""
