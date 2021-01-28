@@ -101,7 +101,6 @@ curl $URL/wallet/getchainparameters | python -m json.tool
 #+END_SRC
 
 ** Smart Contracts
-
 *** Get contract
 
 #+BEGIN_SRC sh
