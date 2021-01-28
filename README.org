@@ -62,13 +62,6 @@ curl --request POST \
   --data "{\"value\":\"$HEX_PASSWORD\"}" | python -m json.tool
 #+END_SRC
 
-Use the base58checkAddress field as ADDRESS_B58 and value as ADDRESS_HEX.
-
-#+BEGIN_SRC sh
-ADDRESS_B58="..."
-ADDRESS_HEX="..."
-#+END_SRC
-
 *** Validate address
 
 #+BEGIN_SRC sh
