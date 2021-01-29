@@ -17,6 +17,7 @@
     - [[#get-account-net][Get account net]]
     - [[#freeze-balance][Freeze balance]]
   - [[#query-the-network][Query the network]]
+    - [[#get-transaction-info-by-block-number][Get transaction info by block number]]
     - [[#list-nodes][List nodes]]
     - [[#get-node-info][Get node info]]
     - [[#get-chain-parameters][Get chain parameters]]
@@ -191,6 +192,20 @@ curl --request POST \
 #+END_SRC
 
 ** Query the network
+*** Get transaction info by block number
+
+#+BEGIN_SRC sh
+NUM=
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+curl --request POST \
+  --url $URL/wallet/gettransactioninfobyblocknum \
+  --header 'Content-Type: application/json' \
+  --data "{\"num\":$NUM}"
+#+END_SRC
+
 *** List nodes
 
 #+BEGIN_SRC sh
