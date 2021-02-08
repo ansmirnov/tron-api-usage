@@ -24,6 +24,7 @@
   - [[#smart-contracts][Smart Contracts]]
     - [[#get-contract][Get contract]]
     - [[#trigger-smart-contract][Trigger smart contract]]
+  - [[#decode-hex][Decode hex]]
   - [[#references][References]]
 
 ** Environment description
@@ -294,6 +295,12 @@ curl --request POST \
   --url $URL/wallet/triggersmartcontract \
   --header 'Content-Type: application/json' \
   --data $DATA | python -m json.tool
+#+END_SRC
+
+** Decode hex
+
+#+BEGIN_SRC sh
+python -c "print(bytes.fromhex("").decode('utf-8'))"
 #+END_SRC
 
 ** References
