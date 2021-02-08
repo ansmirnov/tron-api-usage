@@ -1,4 +1,4 @@
-#+TITLE: Tron usage
+#+TITLE: Tron API usage
 #+PROPERTY: header-args :session *shell tron curl* :results silent raw
 
 ** Contents                                                           :TOC_3:
