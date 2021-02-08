@@ -161,9 +161,6 @@ curl --request POST \
   --data "$RAW_BODY" | python -m json.tool
 #+END_SRC
 
-** Accounts
-*** Create Account
-
 ** Account Resources
 *** Get account resource
 
