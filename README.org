@@ -191,6 +191,24 @@ curl --request POST \
   --data "{\"address\":\"$ADDRESS\"}" | python -m json.tool
 #+END_SRC
 
+*** Freeze balance
+
+#+BEGIN_SRC sh
+OWNER_ADDRESS=""
+#+END_SRC
+
+#+BEGIN_SRC sh
+FROZEN_BALANCE=1000000
+#+END_SRC
+
+#+BEGIN_SRC sh
+FROZEN_DURATION=3
+#+END_SRC
+
+#+BEGIN_SRC sh
+RESOURCE="ENERGY"  # or "BANDWIDTH"
+#+END_SRC
+
 ** Query the network
 *** Get transaction info by block number
 
